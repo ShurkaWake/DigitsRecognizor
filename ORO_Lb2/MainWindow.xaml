@@ -1,0 +1,26 @@
+﻿<Window x:Class="ORO_Lb2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ORO_Lb2"
+        mc:Ignorable="d"
+        Title="DigitGuru" Height="390" Width="500" Background="#FF545454" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/Icon.png">
+    <Grid Height="380" Margin="0,1,0,13" UseLayoutRounding="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="DrawCanvas" HorizontalAlignment="Left" Height="300" Margin="30,30,0,0" VerticalAlignment="Top" Width="300" Cursor="Pen" Background="#FFC3C3C3" MouseMove="Canvas_MouseMove" MouseLeftButtonDown="DrawCanvas_MouseLeftButtonDown" UseLayoutRounding="False"/>
+        <Button x:Name="ProcessButton" Content="Опрацювати" HorizontalAlignment="Left" Margin="360,30,0,0" VerticalAlignment="Top" Width="110" Height="30" UseLayoutRounding="False" Background="#FF58C5D2" BorderBrush="#FF396368" Foreground="#FF313131" BorderThickness="2,2,2,2" Cursor="Hand" Click="ProcessButton_Click"/>
+        <Button x:Name="LoadButton" Content="Завантажити" HorizontalAlignment="Left" Margin="360,80,0,0" VerticalAlignment="Top" Width="110" Height="30" UseLayoutRounding="False" Background="#FF58C5D2" BorderBrush="#FF396368" Foreground="#FF313131" BorderThickness="2,2,2,2" Cursor="Hand" Click="LoadButton_Click"/>
+        <Button x:Name="ClearButton" Content="Витерти" HorizontalAlignment="Left" Margin="360,130,0,0" VerticalAlignment="Top" Width="110" Height="30" UseLayoutRounding="False" Background="#FF58C5D2" BorderBrush="#FF396368" Foreground="#FF313131" BorderThickness="2,2,2,2" Cursor="Hand" Click="ClearButton_Click"/>
+        <Label x:Name="PredictionLabel" Content="-" HorizontalAlignment="Left" Margin="360,245,0,0" VerticalAlignment="Top" Foreground="White" Height="85" Width="110" FontSize="64" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <RadioButton x:Name="OwnButton" Content="Власна" HorizontalAlignment="Left" Margin="360,205,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF58C5D2" BorderBrush="#FF396368" GroupName="MlTypes" IsChecked="True"/>
+        <RadioButton x:Name="MsintButton" Content="З інтернету" HorizontalAlignment="Left" Margin="360,225,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF58C5D2" BorderBrush="#FF396368" GroupName="MlTypes"/>
+        <RadioButton Content="Комбінація" HorizontalAlignment="Left" Margin="360,245,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF58C5D2" BorderBrush="#FF396368" GroupName="MlTypes"/>
+        <Label Content="Нейронна мережа:" HorizontalAlignment="Left" Margin="356,179,0,0" VerticalAlignment="Top" Foreground="White"/>
+    </Grid>
+</Window>
