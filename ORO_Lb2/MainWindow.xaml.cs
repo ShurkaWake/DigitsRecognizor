@@ -6,19 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.Dnn;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using Tensorflow.Operations.Activation;
 
 namespace ORO_Lb2
 {
@@ -286,31 +279,6 @@ namespace ORO_Lb2
 
             renderTargetBitmap.Render(drawingVisual);
             return renderTargetBitmap;
-        }
-
-        public System.Drawing.Bitmap ResizeImage(System.Drawing.Image image, int width, int height)
-        {
-            var destRect = new System.Drawing.Rectangle(0, 0, width, height);
-            var destImage = new System.Drawing.Bitmap(width, height);
-
-            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-
-            using (var graphics = System.Drawing.Graphics.FromImage(destImage))
-            {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                using (var wrapMode = new ImageAttributes())
-                {
-                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, System.Drawing.GraphicsUnit.Pixel, wrapMode);
-                }
-            }
-
-            return destImage;
         }
     }
 }
